@@ -1,0 +1,20 @@
+this rule will make the text not to break line:
+.my-element {
+  white-space: nowrap;
+}
+
+-------------------------------
+
+Buttons DONT inherit this:
+html{
+  font-family 
+}
+
+its font family is different, so we can write on toip of css file:
+
+button {
+  font-family: inherit;
+  font-size: 1em; 
+}
+
+-------------------------------

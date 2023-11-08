@@ -1,0 +1,18 @@
+1. where can i find the "sans serif hebrow"
+
+
+
+2.
+this working:
+
+selectedData.forEach((arr, index) => {
+  selectedData[index] = arr.map((number) => number / 5);
+  console.log(arr)
+})
+
+this is not:
+    
+selectedData.forEach((arr) => {
+  arr = arr.map((number) => number / 5);
+  console.log(arr)
+})
