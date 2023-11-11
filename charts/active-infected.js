@@ -119,6 +119,10 @@ const activeInfectedChart = Highcharts.chart('active-infected-chart', {
   credits: {
     enabled: false
   },
+  tooltip: {
+    shared: true,
+    headerFormat: '<span style="font-size:12px"><b>{point.key}</b></span><br>'
+  },
 });
 
 const activeInfectedCard = document.querySelector('.active-infected-card-content');

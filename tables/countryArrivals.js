@@ -1,7 +1,6 @@
 import { Table } from './table.js'
 
-const countryArrivalsData = [
-  
+const countryArrivalsData = [ 
   {
     country: 'ארה"ב', 
     color: 'placeholder',
@@ -11,7 +10,6 @@ const countryArrivalsData = [
     infectedPercentage: 'placeholder',
     id:'country-0'
   },
-
   {
     country: 'צרפת', 
     color: 'placeholder',
@@ -31,7 +29,6 @@ const countryArrivalsData = [
     infectedPercentage: 'placeholder',
     id:'country-2'
   },
-
   {
     country: 'בריטניה', 
     color: 'placeholder',
@@ -41,26 +38,23 @@ const countryArrivalsData = [
     infectedPercentage: 'placeholder',
     id:'country-3'
   }
- 
 ]
 
 
 function processCountryArrivasData(allData){
-  allData.forEach((dataObj)=>{
-
+  allData.forEach((dataObj) => {
     dataObj.infectedPercentage = Math.trunc((dataObj.infectedCitizens + dataObj.infectedTourists) /  dataObj.totalIncoming * 100);
-    if(dataObj.infectedPercentage < 20) dataObj.color = 'yellow'
-    else if(dataObj.infectedPercentage < 50) dataObj.color = 'orange'
-    else dataObj.color = 'red'
+    if(dataObj.infectedPercentage < 20) dataObj.color = 'color-1-yellow' 
+    else if(dataObj.infectedPercentage < 50) dataObj.color = 'color-2-orange'
+    else dataObj.color = 'color-3-red' 
   })
 }
 
+
+
+
+
 processCountryArrivasData(countryArrivalsData)
-
-
-
-
-
 
 class CountryArrivalsTable extends Table{
   renderData(data) {
@@ -77,7 +71,8 @@ class CountryArrivalsTable extends Table{
       for(let key in record){
         if(key !== 'id'){
           if(key === 'color'){
-            htmlRecordMarkup += `<div class="data-item color-square ${record[key]}-square"></div>`
+            const words = record[key].split('-'); //eg. 'color-2-orange'-> orange
+            htmlRecordMarkup += `<div class="data-item color-square ${words[2]}-square"></div>`
           }
           else{
             htmlRecordMarkup += `<div class="data-item">${record[key]}</div>`

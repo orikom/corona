@@ -428,11 +428,9 @@
           </div>
 
           <div class="card-content">
-            
               <div class="chart-container">
                 <canvas class="dummy-chart-01"></canvas>
               </div>
-            
           </div>
 
         </div>
@@ -527,8 +525,6 @@
         
     </div>
   </section>
-
-
 
   <section class="section">
     <div class="section-top-heading">
@@ -1714,7 +1710,7 @@
             </div>
           </div>
 
-          <div class="card-content">
+          <div class="card-content repetitive-infected-card-content">
             <div class="collapsible-wrapper">
               <button class="filter-btn collapsible-btn">
                 <div class="btn-text">מספר המאומתים בקבוצת הגיל, חודש אחרון</div>
@@ -1726,7 +1722,7 @@
                   <div class="filter-group-heading">הצג לפי</div>
                   <ul> 
                     <li>
-                      <input name="b" type="radio" id="number-in-age-range"><label for="number-in-age-range">מספר המאומתים בקבוצת הגיל</label>
+                      <input name="b" type="radio" id="number-in-age-range" checked><label for="number-in-age-range">מספר המאומתים בקבוצת הגיל</label>
                     </li>
                     <li>
                       <input name="b" type="radio" id="precentage-from-total-age-range"><label for="precentage-from-total-age-range">אחוז מסך המאומתים בקבוצת הגיל</label>
@@ -1738,19 +1734,19 @@
                   <div class="filter-group-heading">זמן</div>
                   <ul> 
                     <li>
-                      <input name="a" type="radio" id="until-now-1"><label for="until-now-1">עד עכשיו</label>
+                      <input name="a" type="radio" id="until-now-1" class="time-range"><label for="until-now-1">עד עכשיו</label>
                     </li>
                     <li>
-                      <input name="a" type="radio" id="year-1"><label for="year-1">שנה</label>
+                      <input name="a" type="radio" id="year-1" class="time-range"><label for="year-1">שנה</label>
                     </li>
                     <li>
-                      <input name="a" type="radio" id="six-months-1"><label for="six-months-1">6 חודשים</label>
+                      <input name="a" type="radio" id="six-months-1" class="time-range"><label for="six-months-1">6 חודשים</label>
                     </li>
                     <li>
-                      <input name="a" type="radio" id="three-months-1"><label for="three-months-1">3 חודשים</label>
+                      <input name="a" type="radio" id="three-months-1" class="time-range"><label for="three-months-1">3 חודשים</label>
                     </li>
                     <li>
-                      <input name="a" type="radio" id="last-month-1"><label for="last-month-1">חודש אחרון</label>
+                      <input name="a" type="radio" id="last-month-1" class="time-range" checked><label for="last-month-1">חודש אחרון</label>
                     </li>
                   </ul>
                 </div>
@@ -2237,8 +2233,6 @@
     </div>
   </section>
 
-
-
   <section class="section">
     <div class="section-top-heading">
       <h2 class="section-header">מדדי תחלואה כללית</h2>
@@ -2388,7 +2382,97 @@
       <!-- in others also links -->
     </div>
     <div class="section-content">
+      <!--TABLE CONTAINER -->
+      <div class="card-container-wrapper">
+        <div class="card-container">
+          <div class="three-points-menu-wrapper collapsible-wrapper">
+            <img src="./images/three-points-icon.svg" class="three-points-icon collapsible-btn">
+            <div class="share-and-download-container collapsible hide">
+              <button>
+                <img src="./images/share-icon.svg">
+                <span>שיתוף</span>  
+              </button>
+              <button>
+                <img src="./images/download-icon.svg">
+                <span>הורדה</span>  
+              </button>
+            </div>
+          </div>
+          
+          <div class="card-top-heading">
+            <h3 class="card-heading">תוכנית הרמזור</h3>
+            <div class="info-container">
+              <img src="./images/info-icon.svg" class="info-icon">
+              <div class="info-tooltip">הסבר לגבי מה שכתוב כאן הסבר לגבי מה שכתוב כאן הסבר לגבי מה שכתוב כאן הסבר לגבי מה שכתוב כאן</div>
+            </div>
+          </div>
 
+          <div class="card-content" id="traffic-light-table-wrapper">
+
+            <div class="collapsible-wrapper">
+
+              <button class="filter-btn collapsible-btn">
+                <div class="btn-text"><span class="num-of-selected">placeholder</span> ישובים נבחרו</div>
+                <img src="./images/down-caret.svg" class="down-caret-icon">
+              </button>
+              <div class="filters-container hide collapsible">
+                <input type="text" placeholder="חיפוש בתי חולים / מוסד" class="user-text-input">
+                <div class="selected-message"><span class="num-of-selected">placeholder</span> ישובים נבחרו</div>
+                <div class="filter-group">
+                  <ul id="filter-list"> 
+                    <!-- <li><input type="checkbox" id="hospital-1"><label for="hospital-1">hospital 1</label></li> -->
+                  </ul>         
+                </div>
+                <div class="approve-or-cancel-buttons-container">
+                  <button class="approve-btn">אישור</button>
+                  <button class="cancal-btn">ביטול</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="last-updated-container">
+              <img src="./images/info-icon.svg" class="info-icon-bright">
+              <span>הנתונים מעודכנים לתאריך 06.06.23</span>
+            </div>
+
+            <div class="legend-container margin-bottom-15">
+              <div class="legend-item">
+                <div class="legend-square red"></div>
+                <div class="legend-text">
+                  <div class="legend-text-heading">אדום</div>
+                  <div class="legend-text-desc">ציון 7.5 ומעלה</div>
+                </div>
+              </div>
+              <div class="legend-item">
+                <div class="legend-square orange"></div>
+                <div class="legend-text">
+                  <div class="legend-text-heading">כתום</div>
+                  <div class="legend-text-desc">ציון בין 6 ל- 7.5</div>
+                </div>
+              </div>
+              <div class="legend-item">
+                <div class="legend-square yellow"></div>
+                <div class="legend-text">
+                  <div class="legend-text-heading">צהוב</div>
+                  <div class="legend-text-desc">ציון בין 4.5 ל- 6</div>
+                </div>    
+              </div>
+              <div class="legend-item">
+                <div class="legend-square olive"></div>
+                <div class="legend-text">
+                  <div class="legend-text-heading">ירוק</div>
+                  <div class="legend-text-desc">ציון עד 4.5</div>
+                </div>    
+              </div>
+            </div>
+            
+            <div class="table-container">
+              <div class="table-headers"></div>
+              <div class="table-data-container"></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
   

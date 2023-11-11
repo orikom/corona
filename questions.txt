@@ -16,3 +16,21 @@ selectedData.forEach((arr) => {
   arr = arr.map((number) => number / 5);
   console.log(arr)
 })
+
+
+
+-----------------------------
+
+const test = {};
+test.a = 1;
+test.a.b = 2; // its like 1.2 trying to access property on number 
+
+console.log(test);
+
+
+const test = {};
+test.a = {};
+test.a.b = 2;
+
+console.log(test);
+console.log(typeof test.a); //object
