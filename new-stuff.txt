@@ -10,7 +10,7 @@ html{
   font-family 
 }
 
-its font family is different, so we can write on toip of css file:
+its font family is different, so we can write on top of css file:
 
 button {
   font-family: inherit;

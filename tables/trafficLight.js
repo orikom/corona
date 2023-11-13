@@ -63,7 +63,6 @@ class trafficLightTable extends Table{
 
       let htmlRecordMarkup = "";
       for(let key in record){
-        console.log(key)
         if(key !== 'id'){
           if(key === 'trafficLightGrade'){
             let trafficColorStr = '';

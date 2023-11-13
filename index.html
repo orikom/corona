@@ -4,44 +4,86 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="./styles/css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-
+  <link rel="stylesheet" href="./styles/css/style.css">
+  
   <script src="https://code.highcharts.com/highcharts.js"></script>
 </head>
 <body>
-
-  <header class="header">
-    <img src="./images/hamburger.svg" class="hamburger-icon"></img>
-    <img src="./images/logo.svg" class="logo-icon"></img>
-    <div class="accessibility-icons-wrapper">
-      <img src="./images/language.svg" class="language-icon"></img>
-      <img src="./images/dark-mode.svg" class="dark-mode-icon"></img>
+  
+    <div class="side-menu-overlay hide">
+      <div class="side-menu">
+        <div class="side-menu-header">
+          <img src="./images/home-icon.svg" class="home-icon">
+          <span class="header-text">עמוד הבית</span>
+          <img src="./images/x-icon.svg" class="x-icon">
+        </div>
+        <hr class="menu-seperator">
+        <ul class="menu-links-1">
+          <li class="menu-link">שירותים רפואיים בישראל</li>
+          <li class="menu-link">הערכת התפתחות הילד</li>
+          <li class="menu-link">גדילה והנקה בילדים</li>
+          <li class="menu-link">איכות במערכת הבריאות</li>
+          <li class="menu-link">קורונה</li>
+        </ul>
+        <hr class="menu-seperator">
+        <ul class="menu-links-2">
+          <li class="menu-link">אודות</li>
+          <li class="menu-link">הצהרת נגישות</li>
+          <li class="menu-link">תנאי שימוש</li>
+        </ul>
+      </div>
     </div>
+  <div class="fixed-position-section">
+    <header class="header">
+      <img src="./images/hamburger.svg" class="hamburger-icon"></img>
+      <img src="./images/logo.svg" class="logo-icon"></img>
+      <div class="accessibility-icons-wrapper">
+        <img src="./images/language.svg" class="language-icon"></img>
+        <img src="./images/dark-mode.svg" class="dark-mode-icon"></img>
+      </div>
 
-    <h1 class="main-heading">עולם הדאטה - נגיף הקורונה בישראל</h1>
-    <div class="last-updated-header">עדכון אחרון: 8/10/2023 11:01</div>
-  </header>
-  <nav class="navbar">
-    <ul class="nav-links">
-      <li class="nav-link">מבט על</li>
-      <li class="nav-link">מדדים מרכזיים</li>
-      <li class="nav-link">תחלואה ואשפוזי ילדים</li>
-      <li class="nav-link">השפעת התחסנות על התחלואה</li>
-      <li class="nav-link">נפטרים</li>
-      <li class="nav-link">בדיקות</li>
-      <li class="nav-link">תחקורים נוספים</li>
-      <li class="nav-link">תחלואה חוזרת ומחלימים</li>
-      <li class="nav-link">התחסנות האוכלוסיה</li>
-      <li class="nav-link">מדדי תחלואה כללית</li>
-      <li class="nav-link">תחלואה מחו"ל</li>
-      <li class="nav-link">רמזור ישובים</li>
-    </ul>
-  </nav>
+      <h1 class="main-heading">עולם הדאטה - נגיף הקורונה בישראל</h1>
+      <div class="last-updated-header">עדכון אחרון: 8/10/2023 11:01</div>
+    </header>
 
-  <section class="section">
+    <nav class="navbar">
+      <ul class="nav-links">
+        <!-- <li class="nav-link"><a href="section-0">מבט על</a></li>
+        <li class="nav-link"><a>מדדים מרכזיים</a></li>
+        <li class="nav-link"><a>תחלואה ואשפוזי ילדים</a></li>
+        <li class="nav-link"><a>השפעת התחסנות על התחלואה</a></li>
+        <li class="nav-link"><a>נפטרים</a></li>
+        <li class="nav-link"><a>בדיקות</a></li>
+        <li class="nav-link"><a>תחקורים נוספים</a></li>
+        <li class="nav-link"><a>תחלואה חוזרת ומחלימים</a></li>
+        <li class="nav-link"><a>התחסנות האוכלוסיה</a></li>
+        <li class="nav-link"><a>מדדי תחלואה כללית</a></li>
+        <li class="nav-link"><a>תחלואה מחו"ל</a></li>
+        <li class="nav-link"><a>רמזור ישובים</a></li> -->
+
+
+        <li class="nav-link"><a href="#section-01">מבט על</a></li>
+        <li class="nav-link"><a href="#section-02">מדדים מרכזיים</a></li>
+        <li class="nav-link"><a href="#section-03">תחלואה ואשפוזי ילדים</a></li>
+        <li class="nav-link"><a href="#section-04">השפעת התחסנות על התחלואה</a></li>
+        <li class="nav-link"><a href="#section-05">נפטרים</a></li>
+        <li class="nav-link"><a href="#section-06">בדיקות</a></li>
+        <li class="nav-link"><a href="#section-07">תחקורים נוספים</a></li>
+        <li class="nav-link"><a href="#section-08">תחלואה חוזרת ומחלימים</a></li>
+        <li class="nav-link"><a href="#section-09">התחסנות האוכלוסיה</a></li>
+        <li class="nav-link"><a href="#section-10">מדדי תחלואה כללית</a></li>
+        <li class="nav-link"><a href="#section-11">תחלואה מחו"ל</a></li>
+        <li class="nav-link"><a href="#section-12">רמזור ישובים</a></li>
+
+
+      </ul>
+    </nav>
+  </div>  
+
+  <section id="section-01" class="section">
     <div class="section-top-heading">
       <h2 class="section-header">מבט על</h2>
       <!-- in others also links -->
@@ -300,7 +342,7 @@
     </div>
   </section>
 
-  <section class="section">
+  <section id="section-02" class="section">
     <div class="section-top-heading">
       <h2 class="section-header">מדדים מרכזיים</h2>
       <button class="related-links-btn">
@@ -346,9 +388,9 @@
                   <div class="filter-group">
                     <div class="filter-group-heading">מצב מאושפזים</div>
                     <ul>
-                      <li><input type="checkbox" id="severe-condition" checked><label for="severe-condition">קשה</label></li>
-                      <li><input type="checkbox" id="moderate-condition" checked><label for="moderate-condition">בינוני</label></li>
-                      <li><input type="checkbox" id="mild-condition" checked><label for="mild-condition">קל</label></li>
+                      <li><input type="checkbox" id="severe-condition" class="condition-checkbox" checked><label for="severe-condition">קשה</label></li>
+                      <li><input type="checkbox" id="moderate-condition" class="condition-checkbox" checked><label for="moderate-condition">בינוני</label></li>
+                      <li><input type="checkbox" id="mild-condition" class="condition-checkbox" checked><label for="mild-condition">קל</label></li>
                     </ul>
 
                     <hr class="filter-separator">
@@ -356,19 +398,19 @@
                     <div class="filter-group-heading">זמן</div>
                     <ul> 
                       <li>
-                        <input name="a" type="radio" id="until-now-1"><label for="until-now-1">עד עכשיו</label>
+                        <input name="chart-1-time-selection" type="radio" id="until-now-1" class="time-range-checkbox"><label for="until-now-1">עד עכשיו</label>
                       </li>
                       <li>
-                        <input name="a" type="radio" id="year-1"><label for="year-1">שנה</label>
+                        <input name="chart-1-time-selection" type="radio" id="year-1" class="time-range-checkbox"><label for="year-1">שנה</label>
                       </li>
                       <li>
-                        <input name="a" type="radio" id="six-months-1"><label for="six-months-1">6 חודשים</label>
+                        <input name="chart-1-time-selection" type="radio" id="six-months-1" class="time-range-checkbox"><label for="six-months-1">6 חודשים</label>
                       </li>
                       <li>
-                        <input name="a" type="radio" id="three-months-1"><label for="three-months-1">3 חודשים</label>
+                        <input name="chart-1-time-selection" type="radio" id="three-months-1" class="time-range-checkbox"><label for="three-months-1">3 חודשים</label>
                       </li>
                       <li>
-                        <input name="a" type="radio" id="last-month-1" checked><label for="last-month-1">חודש אחרון</label>
+                        <input name="chart-1-time-selection" type="radio" id="last-month-1" class="time-range-checkbox" checked><label for="last-month-1">חודש אחרון</label>
                       </li>
                     </ul>
                   </div>
@@ -475,19 +517,19 @@
                   <div class="filter-group-heading">זמן</div>
                   <ul> 
                     <li>
-                      <input name="a" type="radio" id="until-now-1"><label for="until-now-1">עד עכשיו</label>
+                      <input name="dummy" type="radio" id="until-now-1"><label for="until-now-1">עד עכשיו</label>
                     </li>
                     <li>
-                      <input name="a" type="radio" id="year-1"><label for="year-1">שנה</label>
+                      <input name="dummy" type="radio" id="year-1"><label for="year-1">שנה</label>
                     </li>
                     <li>
-                      <input name="a" type="radio" id="six-months-1"><label for="six-months-1">6 חודשים</label>
+                      <input name="dummy" type="radio" id="six-months-1"><label for="six-months-1">6 חודשים</label>
                     </li>
                     <li>
-                      <input name="a" type="radio" id="three-months-1"><label for="three-months-1">3 חודשים</label>
+                      <input name="dummy" type="radio" id="three-months-1"><label for="three-months-1">3 חודשים</label>
                     </li>
                     <li>
-                      <input name="a" type="radio" id="last-month-1"><label for="last-month-1">חודש אחרון</label>
+                      <input name="dummy" type="radio" id="last-month-1"><label for="last-month-1">חודש אחרון</label>
                     </li>
                   </ul>
                 </div>
@@ -526,7 +568,7 @@
     </div>
   </section>
 
-  <section class="section">
+  <section id="section-03" class="section">
     <div class="section-top-heading">
       <h2 class="section-header">תחלואה ואשפוזי ילדים</h2>
       <!-- in others also links -->
@@ -571,19 +613,19 @@
                   <div class="filter-group-heading">זמן</div>
                   <ul> 
                     <li>
-                      <input name="a" type="radio" id="until-now-1"><label for="until-now-1">עד עכשיו</label>
+                      <input name="dummy" type="radio" id="until-now-1"><label for="until-now-1">עד עכשיו</label>
                     </li>
                     <li>
-                      <input name="a" type="radio" id="year-1"><label for="year-1">שנה</label>
+                      <input name="dummy" type="radio" id="year-1"><label for="year-1">שנה</label>
                     </li>
                     <li>
-                      <input name="a" type="radio" id="six-months-1"><label for="six-months-1">6 חודשים</label>
+                      <input name="dummy" type="radio" id="six-months-1"><label for="six-months-1">6 חודשים</label>
                     </li>
                     <li>
-                      <input name="a" type="radio" id="three-months-1"><label for="three-months-1">3 חודשים</label>
+                      <input name="dummy" type="radio" id="three-months-1"><label for="three-months-1">3 חודשים</label>
                     </li>
                     <li>
-                      <input name="a" type="radio" id="last-month-1"><label for="last-month-1">חודש אחרון</label>
+                      <input name="dummy" type="radio" id="last-month-1"><label for="last-month-1">חודש אחרון</label>
                     </li>
                   </ul>
                 </div>
@@ -657,10 +699,10 @@
                   <div class="filter-group-heading">זמן</div>
                   <ul> 
                     <li>
-                      <input name="a" type="radio" id="until-now-1"><label for="until-now-1">עד עכשיו</label>
+                      <input name="dummy" type="radio" id="until-now-1"><label for="until-now-1">עד עכשיו</label>
                     </li>
                     <li>
-                      <input name="a" type="radio" id="year-1"><label for="year-1">שנה</label>
+                      <input name="dummy" type="radio" id="year-1"><label for="year-1">שנה</label>
                     </li>
                     <li>
                       <input name="a" type="radio" id="six-months-1"><label for="six-months-1">6 חודשים</label>
@@ -709,7 +751,7 @@
     </div>
   </section>
 
-  <section class="section">
+  <section id="section-04" class="section">
     <div class="section-top-heading">
       <h2 class="section-header">השפעת התחסנות על התחלואה</h2>
       <!-- in others also links -->
@@ -928,20 +970,20 @@
                   <div class="filter-group-heading">משתנה</div>
                   <ul> 
                     <li>
-                      <input name="a" type="radio" id="active-infected" checked><label for="active-infected">חולים פעילים</label>
+                      <input name="chart-02-radio-01" type="radio" id="active-infected" checked><label for="active-infected">חולים פעילים</label>
                     </li>
                     <li>
-                      <input name="a" type="radio" id="severe-infected"><label for="severe-infected">חולים קשה</label>
+                      <input name="chart-02-radio-01" type="radio" id="severe-infected"><label for="severe-infected">חולים קשה</label>
                     </li>
                   </ul>
                     <hr class="filter-separator">
                     <div class="filter-group-heading"></div>
                   <ul> 
                     <li>
-                      <input name="b" type="radio" id="absolute-number"><label for="absolute-number">מספר מוחלט</label>
+                      <input name="chart-02-radio-02" type="radio" id="absolute-number"><label for="absolute-number">מספר מוחלט</label>
                     </li>
                     <li>
-                      <input name="b" type="radio" id="for-100000" checked><label for="for-100000">ל-100 אלף תושבים</label>
+                      <input name="chart-02-radio-02" type="radio" id="for-100000" checked><label for="for-100000">ל-100 אלף תושבים</label>
                     </li>
                   </ul>            
                   
@@ -981,7 +1023,7 @@
     </div>
   </section>
 
-  <section class="section">
+  <section id="section-05" class="section">
     <div class="section-top-heading">
       <h2 class="section-header">נפטרים</h2>
       <!-- in others also links -->
@@ -1169,7 +1211,7 @@
     </div>
   </section>
 
-  <section class="section">
+  <section id="section-06" class="section">
     <div class="section-top-heading">
       <h2 class="section-header">בדיקות</h2>
       <button class="related-links-btn">
@@ -1453,7 +1495,7 @@
     </div>
   </section>
 
-  <section class="section">
+  <section id="section-07" class="section">
     <div class="section-top-heading">
       <h2 class="section-header">תחקורים נוספים</h2>
       <button class="related-links-btn">
@@ -1678,7 +1720,7 @@
     </div>
   </section>
 
-  <section class="section">
+  <section id="section-08" class="section">
     <div class="section-top-heading">
       <h2 class="section-header">תחלואה חוזרת ומחלימים</h2>
       <!-- in others also links -->
@@ -1958,7 +2000,7 @@
     </div>
   </section>
 
-  <section class="section">
+  <section id="section-09" class="section">
     <div class="section-top-heading">
       <h2 class="section-header">התחסנות האוכלוסיה</h2>
       <!-- in others also links -->
@@ -2233,7 +2275,7 @@
     </div>
   </section>
 
-  <section class="section">
+  <section id="section-10" class="section">
     <div class="section-top-heading">
       <h2 class="section-header">מדדי תחלואה כללית</h2>
       <!-- in others also links -->
@@ -2304,7 +2346,7 @@
     </div>
   </section>
 
-  <section class="section">
+  <section id="section-11" class="section">
     <div class="section-top-heading">
       <h2 class="section-header">תחלואה מחו"ל</h2>
       <!-- in others also links -->
@@ -2376,7 +2418,7 @@
     </div>
   </section>
 
-  <section class="section">
+  <section id="section-12" class="section">
     <div class="section-top-heading">
       <h2 class="section-header">רמזור ישובים</h2>
       <!-- in others also links -->
@@ -2475,6 +2517,9 @@
       </div>
     </div>
   </section>
+  
+  <div class="my-div">hello world</div>
+
   
   <!-- chart js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

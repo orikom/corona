@@ -7,7 +7,7 @@ const mildInfectedData = [];
 
 // init data
 for(let day = 0; day < (365 * 2); day++){
-  mildInfectedData.push(utils.generateNumber(200,300)) //generates a number between MIN and MAX.
+  mildInfectedData.push(utils.generateNumber(200,300)) // MIN and MAX arguments.
   moderateInfectedData.push(utils.generateNumber(60,80))
   severeInfectedData.push(utils.generateNumber(10,50))
 }
@@ -16,28 +16,35 @@ const hospitalizedChart = Highcharts.chart('hospitalized-chart', {
   title: {
     text: ''
   },
+
   chart: {
     type: 'area',
     responsive: true
   },
+
   yAxis: {
     title: {
       text: 'מספר המאושפזים'
     }
   },
+
   xAxis: {
-    type: 'datetime',
     title: {
-      text: 'תאריך'
+        text: 'תאריך'
     },
-    dateTimeLabelFormats: {
-      day: '%e.%m' // Set the date format for daily intervals
+
+    labels: {
+      formatter: function() {
+        return Highcharts.dateFormat('%e.%m', this.value);
+      }
     }
   },
+
   tooltip: {
     shared: true,
     headerFormat: '<span style="font-size:12px"><b>{point.key}</b></span><br>'
   },
+
   plotOptions: {
     area: {
       stacking: 'normal',
@@ -110,8 +117,8 @@ const hospitalizedCard = document.querySelector('.hospitalized-card-content');
 const filtersMenu = hospitalizedCard.querySelector('.filters-container');
 const approveBtnFilter = filtersMenu.querySelector('.approve-btn');
 const cancelBtnFilter = filtersMenu.querySelector('.cancal-btn');
-const conditionCheckboxesList = filtersMenu.querySelectorAll('input[type="checkbox"]');
-const timeRangesList = filtersMenu.querySelectorAll('input[type="radio"]');
+const conditionCheckboxesList = filtersMenu.querySelectorAll('.condition-checkbox');
+const timeRangesList = filtersMenu.querySelectorAll('.time-range-checkbox');
 const downCaret = hospitalizedCard.querySelector('.down-caret-icon');
 
 approveBtnFilter.addEventListener('click', () => {
@@ -120,35 +127,29 @@ approveBtnFilter.addEventListener('click', () => {
   timeRangesList.forEach((timeRange) => {
     if(timeRange.checked){
       if(timeRange.id.includes("until-now")){
-        console.log('until-now');
         timePeriod = -365 * 2;
       }
       else if(timeRange.id.includes("year")){
-        console.log('year');
         timePeriod = -365;
-
       }
       else if(timeRange.id.includes("six-months")){
-        console.log('six');
         timePeriod = -365 / 2;
-
-      }
+     }
       else if(timeRange.id.includes("three-months")){
-        console.log('three');
         timePeriod = -365 / 4;
-
       }
       else if(timeRange.id.includes("last-month")){
-        console.log('last');
         timePeriod = -30;
-
       }
     } 
   })
   
-  conditionCheckboxesList.forEach((checkbox, index)=>{
-    if(checkbox.checked)
-      hospitalizedChart.series[index].setData(mildInfectedData.slice(timePeriod));
+  let conditionsArr = [mildInfectedData, moderateInfectedData, severeInfectedData]
+  conditionCheckboxesList.forEach((checkbox, index) => {
+
+    if(checkbox.checked){
+      hospitalizedChart.series[index].setData(conditionsArr[index].slice(timePeriod));
+    }
 
     else hospitalizedChart.series[index].setData([]);
   })

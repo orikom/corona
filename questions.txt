@@ -34,3 +34,21 @@ test.a.b = 2;
 
 console.log(test);
 console.log(typeof test.a); //object
+
+
+--------------------
+
+i change the position of the html elemnts and it worked, i dont understand why:
+
+  this not works:
+
+  <header class="header">...content  </header>
+   <div class="side-menu-overlay hide">...content    </div>
+this works:
+    <div class="side-menu-overlay hide">...content    </div>
+   <header class="header">...content  </header>
+
+
+   closest!! 
+   מוצא את האבא הקרוב!
+     const clickedNavLink = event.target.closest('.nav-link');

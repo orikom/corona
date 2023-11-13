@@ -1,0 +1,17 @@
+<svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g>
+    <path d="M10 26L26 10" stroke="#374f60" stroke-width="3"></path>
+    <path d="M26 26L10 10" stroke="#374f60" stroke-width="3"></path>
+    </g>
+    <defs>
+    <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix>
+    <feOffset></feOffset>
+    <feGaussianBlur stdDeviation="4"></feGaussianBlur>
+    <feComposite in2="hardAlpha" operator="out"></feComposite>
+    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.4 0"></feColorMatrix>
+    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_2284_9677"></feBlend>
+    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_2284_9677" result="shape"></feBlend>
+  </defs>
+</svg>
+
