@@ -31,7 +31,7 @@ body{
   top: 0;
   right: 0;
   z-index: 1000;
-  
+
 }
 
 .header{
@@ -41,7 +41,7 @@ body{
 
   padding: 1rem;
   width: 100vw;
-  background-color: white;
+  background-color: #fff;
 
   .hamburger-icon{
     margin-bottom: 0.5rem;
@@ -79,6 +79,8 @@ body{
     margin-top: 0.5rem;
     color: #5f7280;
     font-weight: 700;
+    background-color: white;
+  
   }
 
 }
@@ -91,7 +93,6 @@ body{
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0,0, 0.7);
-  /* color: #374f60; */
   font-weight: 700;
 
   .side-menu{
@@ -103,7 +104,8 @@ body{
     right: 0;
     padding: 16px 20px;
     font-size: 0.875rem;
-
+    color: #374f60; 
+    
   }
   .side-menu-header{
     padding-top: 1rem;
@@ -147,8 +149,8 @@ body{
   }
 
 }
-// ---------------
 
+// ---------------
 .navbar{
   background-color: rgb(55, 79, 96);
   position: fixed;
@@ -189,7 +191,7 @@ body{
 
 .section{
   border-bottom: 1px solid rgba(199,199,199,.4470588235);
-
+  color: var(--main-text-color);
 
   .section-top-heading{
     display: flex;
@@ -205,9 +207,10 @@ body{
 
     .related-links-btn{
       display: flex;
-      padding: 4px 12px;
+      padding: 4px 12px 4px 7px;
       align-items: flex-end;
-      background-color: white;
+      background-color: var(--card-background-color);
+      color: var(--main-text-color);
       border-radius: 16px;
       border: 1px solid #C3CACF;
       &:hover{
@@ -215,6 +218,7 @@ body{
       }
       .btn-text{
         font-size: 0.875rem;
+        padding-left: 5px;
       }
     }
 
@@ -249,7 +253,7 @@ body{
 
 .info-card{
   padding: 10px;
-  background-color: #fff;
+  background-color: var(--card-background-color);
   border-radius: 10px;
   // box-shadow: 3px 3px 11px #465a7a1c;
   box-shadow: 0 3px 15px -2px #00020233;
@@ -270,24 +274,18 @@ body{
     flex-direction: column;
     position: relative;
 
-    .info-icon{
-      width: 1.25rem;
-      &:hover ~ .info-tooltip{
-        display: block;
-        z-index: 100;
-      }
-    }
-
     .info-tooltip{
       position: absolute;
       top: 25px;
       left: -60px;
       font-size: 0.8rem;
-      background-color: white;
+      color: var(--main-text-color);
+      background-color: var( --card-background-color);
       border: 2px solid $updated-box-background;
-      padding: .5rem;
+      border-radius: 5px;
+      padding: .3rem;
       min-width: 8rem;
-
+      
       display: none;
     }
   }
@@ -328,7 +326,7 @@ body{
 
 }
 .last-7-days-container{
-  background-color: #fff; 
+  background-color: var(--card-background-color); 
   border-radius: 10px;
   box-shadow: 3px 3px 11px #465a7a1c;
   padding: 10px;  
@@ -341,7 +339,7 @@ body{
 //charts
 
 .card-container-wrapper{
-  background-color: #fff; 
+  background-color: var(--card-background-color); 
   padding: 0 20px;  
   margin: 0 10px 20px 10px;
   border-radius: 10px;
@@ -360,6 +358,7 @@ body{
     .three-points-icon{
       position: absolute;
       left: 0;
+
       &:hover{
         cursor: pointer;
       }
@@ -396,7 +395,7 @@ body{
   .filter-btn{
     display: flex;
     align-items: center;
-    background-color: $filter-btn-background;
+    background-color: var(--filter-button-background-color);
     border: 1px solid #e4e9f2;
     border-radius: 1.5rem;
     margin-top: 6px;
@@ -408,6 +407,7 @@ body{
       line-height: 1;
       font-size: 0.875rem;
       margin-left: 0.5rem;
+      color: var(--main-text-color);
     }
 
   }
@@ -417,25 +417,27 @@ body{
   .filters-container{
     position: absolute;
     z-index: 10;
-    background-color: white;
     width: 175px;
     max-height: 250px;
     font-size: 0.875rem;
     overflow-y: auto;
     border: 1px solid rgba(186,186,186,.23) ;
-    
+    color: var(--main-text-color);
+    background-color: var(--card-background-color);
+
     .user-text-input{
       width: 100%;
       padding: 10px 3px;
     }
 
-    .selected-message{
+    .selected-message {
       margin-bottom: 0.5rem;
     }
 
     // background-color: red;
     .filter-group{
       padding: 0 1rem 10px 1rem;
+
       .filter-group-heading{
         font-weight: 700;
         margin: 0.5rem 0 0.3rem 0;
@@ -443,6 +445,7 @@ body{
 
       ul{
         list-style: none;
+
         li{
           margin-bottom: 0.5rem;
         }
@@ -452,12 +455,13 @@ body{
         margin: 0.8rem 0;
       }
 
-      }
+    }
       .approve-or-cancel-buttons-container{
         display: flex;
         // margin-top: 0.5rem;
         button{
-          background-color: #e6f1f4;
+          background-color: var(--filter-button-background-color);
+          color: var(--main-text-color);
           width: 100%;
           border: none;
           padding: .3rem;
@@ -493,10 +497,6 @@ body{
     width: fit-content;
     padding: 5px 5px;
     border-radius: 5px;
-    .info-icon-bright{
-      width: 1rem;
-      margin-left: 5px;
-    }
     span{
 
     }
@@ -754,3 +754,55 @@ body{
 .rotated{
   transform: rotate(180deg);
 }
+
+
+.info-icon{
+  
+  width: 1.25rem;
+
+  &:hover ~ .info-tooltip{
+    font-weight: 400;
+    display: block;
+    z-index: 100;
+  }
+}
+
+.info-icon{
+  height: 18px;
+  width: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: var(--card-background-color);
+  background-color: var(--main-text-color);
+  border-radius: 50%;
+  // padding: 10px;
+  font-size: 0.6rem;
+  font-weight: 600;
+}
+
+// .info-icon-bright{
+//   width: 1rem;
+//   margin-left: 5px;
+// }
+.info-icon-bright{
+  // width: 1rem; --check again
+  margin-left: 5px;
+
+  height: 18px;
+  width: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: var(--card-background-color);
+  background-color: var(--main-text-color);
+  border-radius: 50%;
+  // padding: 10px;
+  font-size: 0.6rem;
+  font-weight: 600;
+
+}
+
+

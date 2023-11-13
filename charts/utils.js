@@ -15,6 +15,11 @@ export const utils = {
     lightBlueFaded: 'rgba(80, 203, 253, 0.7)',
     orangeFaded: 'rgba(255, 125, 103, 0.7)',
     purpleFaded: 'rgba(186, 161, 239, 0.7)',
+
+    darkModeGreenGraph: 'rgb(155, 233, 133)',
+    darkModeOrangeGraph: 'rgb(253, 130, 100)',
+    darkModeBlueGraph: 'rgb(44, 210, 219)'
+
   },
   
   generateNumber : function (min, max) {

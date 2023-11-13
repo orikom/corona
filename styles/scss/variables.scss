@@ -11,13 +11,20 @@ $legend-light-blue: rgb(80, 203, 253);
 $legend-orange: rgb(255, 125, 103);
 $legend-purple: rgb(186, 161, 239);
 
-
 //colors of icons and text on collapsible side menu
-$menu-modal-text-color: #374f60;
+// $menu-modal-text-color: #374f60;
 
 
 :root {
-  --main-text-color: #233333; //changing to #FFF;
+  --main-text-color: #233333; 
   --website-background-color: #F8FAFD;
+  --card-background-color: #FFF;
+  --filter-button-background-color: #f7f9fc;
 }
 
+.dark-mode{
+  --main-text-color: #FFF;
+  --website-background-color: #4B6170;
+  --card-background-color: #374F60;
+  --filter-button-background-color: #4e6275;
+}

@@ -118,7 +118,25 @@ function handleScrollEvent(){
   })
 }
 
-
-
 window.addEventListener('scroll', handleScrollEvent)
-//
+
+
+
+// Dark mode -------------------------------------
+
+const darkModeBtn = document.querySelector('.dark-mode-icon');
+
+darkModeBtn.addEventListener('click', () => {
+  document.querySelector('body').classList.toggle('dark-mode');
+  
+  // if dark mode active
+  if(document.querySelector('body').classList.contains('dark-mode')){
+    document.documentElement.style.setProperty('--website-background-color', '#4B6170')
+  }
+
+  else{
+    document.documentElement.style.setProperty('--website-background-color', '#F8FAFD')
+  }
+  
+})
+
