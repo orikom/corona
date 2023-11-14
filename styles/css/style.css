@@ -493,83 +493,71 @@ body {
   background-color: var(--table-headers-background-color);
   display: flex;
   justify-content: space-between;
-  padding: 0.2rem 0.5rem;
 }
 .card-container .table-container .table-headers .table-header-category {
   display: flex;
   gap: 0.5rem;
+  padding: 1rem 0;
 }
 .card-container .table-container .table-headers .table-header-category .down-caret-icon {
   transition: none;
 }
+.card-container .table-container .table-headers .table-header-category:hover {
+  cursor: pointer;
+}
+.card-container .table-container #table-1-headers {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.card-container .table-container #table-2-headers {
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+.card-container .table-container #table-3-headers {
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
 .card-container .table-container .table-data {
-  display: flex;
-  padding: 0.2rem 0.5rem;
-  font-weight: 700;
+  display: grid;
+  row-gap: 1rem;
+  padding: 1rem 0;
   border-bottom: 2px solid var(--table-headers-background-color);
 }
-.card-container .table-container .table-data .data-item-with-precentage-bar {
+.card-container .table-container #table-1-data-container > .table-data {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.card-container .table-container #table-1-data-container > .table-data .data-item:first-child {
+  font-weight: 700;
+}
+.card-container .table-container #table-2-data-container > .table-data {
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+.card-container .table-container #table-3-data-container > .table-data {
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+.card-container .table-container .data-item-with-precentage-bar {
   display: flex;
   align-items: center;
 }
-.card-container .table-container .table-data .data-item-with-precentage-bar .precentage-container {
+.card-container .table-container .data-item-with-precentage-bar .precentage-container {
   width: 40px;
   height: 10px;
   background-color: var(--precentage-bar-container-color);
 }
-.card-container .table-container .table-data .data-item-with-precentage-bar .precentage-container .precentage-bar {
+.card-container .table-container .data-item-with-precentage-bar .precentage-container .precentage-bar {
   height: 100%;
   background-color: var(--precentage-bar-blue-color);
 }
-.card-container .table-container .table-data .color-square {
+.card-container .table-container .color-square {
   width: 20px;
   height: 20px;
   border-radius: 5px;
 }
-.card-container .table-container .table-data .yellow-square {
+.card-container .table-container .yellow-square {
   background-color: rgb(252, 224, 82);
 }
-.card-container .table-container .table-data .orange-square {
-  background-color: rgb(244, 185, 131);
+.card-container .table-container .orange-square {
   background-color: rgb(255, 125, 103);
 }
-.card-container .table-container .table-data .red-square {
+.card-container .table-container .red-square {
   background-color: rgb(226, 29, 72);
-}
-
-#hospitals-vacancy-table-wrapper .table-data {
-  justify-content: space-between;
-  padding-left: 8rem;
-}
-#hospitals-vacancy-table-wrapper .table-data > :nth-child(1) {
-  min-width: 5rem;
-}
-#hospitals-vacancy-table-wrapper .table-data > :nth-child(2) {
-  min-width: 3rem;
-}
-
-#country-arrivals-table-wrapper .table-data, #traffic-light-table-wrapper .table-data {
-  font-weight: 400;
-  justify-content: space-between;
-  padding-left: 5rem;
-}
-#country-arrivals-table-wrapper .table-data > :nth-child(1), #traffic-light-table-wrapper .table-data > :nth-child(1) {
-  width: 4.5rem;
-}
-#country-arrivals-table-wrapper .table-data > :nth-child(2), #traffic-light-table-wrapper .table-data > :nth-child(2) {
-  margin-right: -2.5rem;
-}
-#country-arrivals-table-wrapper .table-data > :nth-child(3), #traffic-light-table-wrapper .table-data > :nth-child(3) {
-  width: 40px;
-  margin-left: 1rem;
-}
-#country-arrivals-table-wrapper .table-data > :nth-child(4), #traffic-light-table-wrapper .table-data > :nth-child(4) {
-  width: 40px;
-  margin-left: 1rem;
-}
-#country-arrivals-table-wrapper .table-data > :nth-child(5), #traffic-light-table-wrapper .table-data > :nth-child(5) {
-  width: 40px;
-  margin-left: 1rem;
 }
 
 #traffic-light-table-wrapper .red-traffic-light, #traffic-light-table-wrapper .orange-traffic-light, #traffic-light-table-wrapper .yellow-traffic-light, #traffic-light-table-wrapper .green-traffic-light {

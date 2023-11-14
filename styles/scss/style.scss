@@ -425,9 +425,8 @@ body{
           background-color: $filter-btn-background;
         }
 
-        span{
+        span{}
 
-        }
         img{
           max-width: 1rem;
         }
@@ -457,6 +456,7 @@ body{
   .collapsible-wrapper{
     // width: fit-content;
   }
+
   .filters-container{
     position: absolute;
     z-index: 10;
@@ -554,118 +554,92 @@ body{
   .table-container{
     height: 234px;
     overflow-y: auto;
+
     .table-headers{
       background-color: var(--table-headers-background-color);
       display: flex;
       justify-content: space-between;
-      // padding: 0.2rem;
-      //specific for hospitals table
-      padding: 0.2rem 0.5rem;
-      .table-header-category{
-        // padding-left: 3rem;
+
+      .table-header-category {
         display: flex;
         gap: 0.5rem;
-      
+        padding: 1rem 0;
+  
         .down-caret-icon{
           transition: none;
+        }      
+        &:hover{
+          cursor: pointer;
         }
-        
       }
+    }
+
+    #table-1-headers{
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    #table-2-headers{
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+    #table-3-headers{
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+
     }
 
     .table-data{
-      display: flex;
-  
-      padding: 0.2rem 0.5rem;
-      font-weight: 700;
+      display: grid;
+      row-gap: 1rem;
+      padding: 1rem 0 ;
       border-bottom: 2px solid var(--table-headers-background-color);
-      
-      .data-item-with-precentage-bar{
-        display: flex;
-        align-items: center;
-        .precentage-container{
-          width: 40px;
-          height: 10px;
-          background-color: var(--precentage-bar-container-color);
+    }
 
-          .precentage-bar{
-            height: 100%;
-            
-            background-color: var(--precentage-bar-blue-color);
-          }
+    #table-1-data-container > .table-data{
+      grid-template-columns: 1fr 1fr 1fr;
+      .data-item:first-child{
+        font-weight: 700;
+      }
+    }
+    #table-2-data-container > .table-data{
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+    #table-3-data-container > .table-data{
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+
+    }
+
+    .data-item-with-precentage-bar{
+      display: flex;
+      align-items: center;
+      .precentage-container{
+        width: 40px;
+        height: 10px;
+        background-color: var(--precentage-bar-container-color);
+
+        .precentage-bar{
+          height: 100%;
+          
+          background-color: var(--precentage-bar-blue-color);
         }
       }
-
-
-
-      .color-square{
-        width: 20px;
-        height: 20px;
-        border-radius: 5px;
-      }
-
-      .yellow-square{
-        background-color: rgb(252, 224,82);
-        
-      }
-      .orange-square{
-        background-color: rgb(244, 185,131);
-        background-color: $legend-orange;
-      }
-      .red-square{
-        // background-color: rgb(247, 106,108);
-        background-color: $legend-red;
-      }
     }
 
+    .color-square{
+      width: 20px;
+      height: 20px;
+      border-radius: 5px;
+    }
+
+    .yellow-square{
+      background-color: rgb(252, 224,82);
+      
+    }
+    .orange-square{
+      background-color: $legend-orange;
+    }
+    .red-square{
+      background-color: $legend-red;
+    }
   }
-}
 
-#hospitals-vacancy-table-wrapper{
-  .table-data{
-     justify-content: space-between;
-    padding-left: 8rem;
-    & > :nth-child(1){
-      min-width: 5rem;
-    }
-    & > :nth-child(2){
-      min-width: 3rem;
-    }
-
-    // div:not(:first-child):after{
-    //   content: '%';
-    // }
-    
-  }
-}
-
-#country-arrivals-table-wrapper, #traffic-light-table-wrapper{
-  .table-data{
-    font-weight: 400;
-    justify-content: space-between;
-    padding-left: 5rem;
-    & > :nth-child(1){
-      width: 4.5rem;
-    }
-    & > :nth-child(2){
-      margin-right: -2.5rem;
-    }
-    & > :nth-child(3){
-      width: 40px;
-      margin-left: 1rem;
-    }
-    & > :nth-child(4){
-      width: 40px;
-
-      margin-left: 1rem;
-    }
-    & > :nth-child(5){
-      width: 40px;
-
-      margin-left: 1rem;
-    }
-
-  }
 }
 
 #traffic-light-table-wrapper{
@@ -686,7 +660,6 @@ body{
   }
   .yellow-traffic-light{
     background-color: rgba(252, 224,82, 0.7);  
-
   }
 
   .green-traffic-light{
@@ -705,19 +678,15 @@ body{
       .legend-text{
         margin-right: 4px;
         font-size: 0.8rem;
-        // margin-left: 15px;
+    
 
         .legend-text-heading{
-          // font-size: 1.1rem;
         }
         .legend-text-desc{
           font-size: 0.7rem;
           color: #bbb;
-
         }
       }
-
-   
 
       .legend-square {
         width: 25px;
@@ -736,22 +705,17 @@ body{
       }
 
       .red-square{
-        // background-color: rgb(247, 106,108);
         background-color: $legend-red;
       }
-
     }
   } 
 }
-
-
 
 .down-caret-icon{
   width: 12px;
   margin-left: 0.5rem;
   transition: all 0.3s;
 }
-
 
 //helpers
 .bold{
@@ -767,6 +731,7 @@ body{
 .red{
  background-color: $legend-red;
 }
+
 .musturd{
   background-color: $legend-musturd;
 }
@@ -784,7 +749,6 @@ body{
 .orange{
   background-color: $legend-orange;
 }
-
 .purple{
   background-color: $legend-purple;
 }
@@ -794,7 +758,6 @@ body{
 .margin-bottom-15{
   margin-bottom: 15px;
 }
-
 .hide{
   display: none !important;
 }
