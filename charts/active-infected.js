@@ -73,9 +73,13 @@ for(let category in data){
   expiredArrSevereCondition.push(Math.floor(data[category].expired / 2.5));
 }
 
-const activeInfectedChart = Highcharts.chart('active-infected-chart', {
+
+
+const lightModeOptions = {
   chart: {
-    type: 'column'
+    type: 'column',
+    responsive: true,
+    backgroundColor: '#fff',
   },
   title: {
     text: ''
@@ -83,13 +87,30 @@ const activeInfectedChart = Highcharts.chart('active-infected-chart', {
   xAxis: {
     categories: ['5-11', '12-15', '16-19','20-29', '30-39', '40-49','50-59', '60-69', '70-79','80+'],
     title: {
-      text: 'קבוצת גיל'
+      text: 'קבוצת גיל',
+      style:{
+        color: '#233333',
+      }
     },
     gridLineWidth: 1,
+    labels: {
+      style:{
+        color: '#233333'
+      },
+  
+    }
   },
   yAxis: {
     title: {
-      text: 'מספר חולים פעילים'
+      text: 'מספר חולים פעילים',
+      style:{
+        color: '#233333'
+      }
+    },
+    labels: {
+      style:{
+        color: '#233333'
+      }
     }
   },
   series: [{
@@ -123,7 +144,82 @@ const activeInfectedChart = Highcharts.chart('active-infected-chart', {
     shared: true,
     headerFormat: '<span style="font-size:12px"><b>{point.key}</b></span><br>'
   },
-});
+}
+
+const darkModeOptions = {
+  chart: {
+    type: 'column',
+    responsive: true,
+    backgroundColor: '#374F60',
+  },
+  title: {
+    text: ''
+  },
+  xAxis: {
+    categories: ['5-11', '12-15', '16-19','20-29', '30-39', '40-49','50-59', '60-69', '70-79','80+'],
+    title: {
+      text: 'קבוצת גיל',
+      style:{
+        color: '#fff'
+      }
+    },
+    labels: {
+      style:{
+        color: '#fff'
+      }
+    },
+    gridLineWidth: 1,
+  },
+
+  yAxis: {
+    title: {
+      text: 'מספר חולים פעילים',
+      style:{
+        color: '#fff'
+      }
+    },
+    labels: {
+      style:{
+        color: '#fff'
+      }
+    }
+  },
+
+  series: [{
+    name: 'לא מחוסנים',
+    data: unvaccinatedArr.slice(),
+    showInLegend: false,
+    color: utils.COLORS.lightBlue,
+  }, {
+    name: 'מחוסנים ללא תוקף',
+    data: expiredArr.slice(),
+    showInLegend: false,
+    color: utils.COLORS.oliveGreen,
+  }, {
+    name: 'מחוסנים',
+    data: vaccinatedArr.slice(),
+    showInLegend: false,
+    color: utils.COLORS.darkGreen,
+  }],
+  plotOptions: {
+    column: {
+      grouping: true,
+      pointPadding: 0,
+      groupPadding: 0.1,
+
+    }
+  },
+  credits: {
+    enabled: false
+  },
+  tooltip: {
+    shared: true,
+    headerFormat: '<span style="font-size:12px"><b>{point.key}</b></span><br>'
+  },
+}
+
+const activeInfectedChart = Highcharts.chart('active-infected-chart', lightModeOptions );
+
 
 const activeInfectedCard = document.querySelector('.active-infected-card-content');
 const filtersMenu = activeInfectedCard.querySelector('.filters-container');
@@ -170,3 +266,16 @@ cancelBtnFilter.addEventListener('click', () => {
   downCaret.classList.remove("rotated");
 })
 
+
+
+//do this on the charts.js file for every chart
+document.querySelector('.dark-mode-icon').addEventListener('click', toggleChartDarkMode);
+
+// Function to toggle between light and dark mode
+function toggleChartDarkMode() {
+  if (activeInfectedChart.options.chart.backgroundColor === '#374F60') {
+    activeInfectedChart.update(lightModeOptions);
+  } else {
+    activeInfectedChart.update(darkModeOptions);
+  }
+}

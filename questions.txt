@@ -52,3 +52,6 @@ this works:
    closest!! 
    מוצא את האבא הקרוב!
      const clickedNavLink = event.target.closest('.nav-link');
+
+
+need to check how to import lodash for example!!

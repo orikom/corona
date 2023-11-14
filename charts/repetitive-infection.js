@@ -34,7 +34,7 @@ for(let ageGroup in data){
   data[ageGroup].vaccinated = {};
   data[ageGroup].unVaccinated = {};
   
-  for(let category in data[ageGroup]){// category : vaccinated, unVaccinated
+  for(let category in data[ageGroup]){ // category : vaccinated, unVaccinated
     //number of infected
     data[ageGroup][category].lastMonthRepetitiveInfected = utils.generateNumber(1,100);
     data[ageGroup][category].last3MonthsRepetitiveInfected = utils.generateNumber(20,700);
@@ -48,12 +48,15 @@ for(let ageGroup in data){
     data[ageGroup][category].precentagelast6MonthsRepetitiveInfected = utils.generateNumber(1,50);
     data[ageGroup][category].precentagelastYearRepetitiveInfected = utils.generateNumber(1,50);
     data[ageGroup][category].precentageuntilNowRepetitiveInfected = utils.generateNumber(1,50);
+    
   }
 }
 
-const repetitiveInfectedChart = Highcharts.chart('repetitive-infection-chart', {
+const lightModeOptions = {
   chart: {
-    type: 'bar'
+    type: 'bar',
+    responsive: true,
+    backgroundColor: '#fff',
   },
   title: {
     text: ''
@@ -67,17 +70,106 @@ const repetitiveInfectedChart = Highcharts.chart('repetitive-infection-chart', {
   },
   xAxis: {
     title: {
-      text: 'קבוצת גיל'
+      text: 'קבוצת גיל',
+      style:{
+        color: '#233333',
+      }
     }, 
     categories: ['80+', '70-79', '60-69', '50-59', '40-49', '30-39', '20-29','16-19','12-15', '5-11' ],
     
+    gridLineWidth: 1,
+
+    labels: {
+      style:{
+        color: '#233333'
+      },
+  
+    }
+  },
+
+  yAxis: {
+    title: {
+      text: 'מספר החולים בתחלואה חוזרת',
+      style:{
+        color: '#233333'
+      }
+    },
+    labels: {
+      style:{
+        color: '#233333'
+      }
+    }
+    //add these properties when changing to precentages:
+
+    // labels: {
+    //   format: '{value}%'
+    // },
+    // tickInterval: 10
+    
+  },
+  plotOptions: {
+    bar: {
+      stacking: 'grouped'
+    }
+  },
+  series: [{
+    name: 'מחוסנים',
+    data: [3, 6, 10, 8,2,3,12,23,12,21],
+    color: utils.COLORS.darkGreen,
+  }, {
+    name: 'לא מחוסנים',
+    data: [3, 6, 10, 8,2,3,12,23,12,21],
+    color: utils.COLORS.lightBlue,
+  }],
+  credits: {
+    enabled: false
+  },
+}
+
+const darkModeOptions = {
+  chart: {
+    type: 'bar',
+    responsive: true,
+    backgroundColor: '#374F60',
+  },
+  title: {
+    text: ''
+  },
+  tooltip: {
+    shared: true,
+    headerFormat: '<span style="font-size:12px"><b>{point.key}</b></span><br>'
+  },
+  legend: {
+    enabled: false
+  },
+  xAxis: {
+    title: {
+      text: 'קבוצת גיל',
+      style:{
+        color: '#fff'
+      }
+    }, 
+    categories: ['80+', '70-79', '60-69', '50-59', '40-49', '30-39', '20-29','16-19','12-15', '5-11' ],
+    labels: {
+      style:{
+        color: '#fff'
+      }
+    },
     gridLineWidth: 1,
   },
 
   yAxis: {
     title: {
-      text: 'מספר החולים בתחלואה חוזרת'
+      text: 'מספר החולים בתחלואה חוזרת',
+      style:{
+        color: '#fff'
+      }
     },
+    labels: {
+      style:{
+        color: '#fff'
+      }
+    }
 
     //add these properties when changing to precentages:
 
@@ -104,8 +196,8 @@ const repetitiveInfectedChart = Highcharts.chart('repetitive-infection-chart', {
   credits: {
     enabled: false
   },
-});
-
+}
+const repetitiveInfectedChart = Highcharts.chart('repetitive-infection-chart', lightModeOptions);
 
 const repetitiveInfectedCard = document.querySelector('.repetitive-infected-card-content');
 
@@ -197,11 +289,24 @@ cancelBtnFilter.addEventListener('click', () => {
 })
 
 
-
 function extractData(vaccinatedStr, timePeriodStr){
   let resultArr = [];
   for(let ageGroup in data){
     resultArr.push(data[ageGroup][vaccinatedStr][timePeriodStr]);
   }
   return resultArr;
+}
+
+//do this on the charts.js file for every chart
+document.querySelector('.dark-mode-icon').addEventListener('click', toggleChartDarkMode);
+
+// Function to toggle between light and dark mode
+function toggleChartDarkMode() {
+  if (repetitiveInfectedChart.options.chart.backgroundColor === '#374F60') {
+    console.log('1')
+    repetitiveInfectedChart.update(lightModeOptions);
+  } else {
+    console.log('2')
+    repetitiveInfectedChart.update(darkModeOptions);
+  }
 }

@@ -24,7 +24,7 @@ export const utils = {
   
   generateNumber : function (min, max) {
     return min + Math.floor((max - min) * Math.random());
-  }
+  },
 
 };
 

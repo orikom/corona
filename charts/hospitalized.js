@@ -23,20 +23,6 @@ const lightModeOptions = {
     backgroundColor: '#fff',
   },
 
-  yAxis: {
-    title: {
-      text: 'מספר המאושפזים',
-      style:{
-        color: '#233333'
-      }
-    },
-    labels: {
-      style:{
-        color: '#233333'
-      }
-    }
-  },
-
   xAxis: {
     title: {
         text: 'תאריך',
@@ -53,6 +39,20 @@ const lightModeOptions = {
         color: '#233333'
       },
   
+    }
+  },
+
+  yAxis: {
+    title: {
+      text: 'מספר המאושפזים',
+      style:{
+        color: '#233333'
+      }
+    },
+    labels: {
+      style:{
+        color: '#233333'
+      }
     }
   },
 
@@ -128,28 +128,14 @@ const lightModeOptions = {
 }
 
 const darkModeOptions = {
-  title: {
-    text: ''
-  },
-
   chart: {
     type: 'area',
     responsive: true,
     backgroundColor: '#374F60',
   },
 
-  yAxis: {
-    title: {
-      text: 'מספר המאושפזים',
-      style:{
-        color: '#fff'
-      }
-    },
-    labels: {
-      style:{
-        color: '#fff'
-      }
-    }
+  title: {
+    text: ''
   },
 
   xAxis: {
@@ -164,6 +150,20 @@ const darkModeOptions = {
       formatter: function() {
         return Highcharts.dateFormat('%e.%m', this.value);
       },
+      style:{
+        color: '#fff'
+      }
+    }
+  },
+
+  yAxis: {
+    title: {
+      text: 'מספר המאושפזים',
+      style:{
+        color: '#fff'
+      }
+    },
+    labels: {
       style:{
         color: '#fff'
       }
@@ -241,6 +241,7 @@ const darkModeOptions = {
     enabled: false
   },
 }
+
 
 const hospitalizedChart = Highcharts.chart('hospitalized-chart', lightModeOptions);
 

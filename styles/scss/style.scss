@@ -226,6 +226,32 @@ body{
   .section-content{
     padding-top: 0.5rem;
     margin: 1rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    .card-container-wrapper{
+  
+      background-color: var(--card-background-color); 
+      padding: 0 20px;  
+      margin: 0 10px 20px 10px;
+      border-radius: 10px;
+      box-shadow: 3px 3px 11px #465a7a1c;
+      width:100%;
+
+      @media (min-width: 768px){
+        margin: 0;
+        width: calc(50% - 0.5rem);
+      }
+
+      @media (min-width: 1281px) {
+        width: calc(100% / 3 - .67rem);
+      }
+
+    }
+    
+    // .table-wrapper{
+    //   width: 100%;
+    // }
   }
 }
 
@@ -240,16 +266,41 @@ body{
 .info-cards-container{
   display: flex;
   flex-wrap: wrap;
+  align-items: stretch;
+  margin-bottom: 1rem;
+  height: 100%;
+  width: 100%; 
+}
+
+
+.info-card-container-horizontal{
+  .info-card{
+    height: 100%;
+  }
+  width: 100%;
+  padding: 10px;
+
+  @media (min-width: 500px) {
+    width: 50%;
+  }
+  @media (min-width: 768px) {
+    width: 25%;
+  }
 }
 
 .info-card-container-vertical{
+
   width: 50%;
   padding: 10px;
+
+  @media (min-width: 768px) {
+    width: 25%;
+  }
+  @media (min-width: 1281px) {
+    width: calc(100% / 6);
+  }
 }
-.info-card-container-horizontal{
-  width: 100%;
-  padding: 10px;
-}
+
 
 .info-card{
   padding: 10px;
@@ -281,7 +332,7 @@ body{
       font-size: 0.8rem;
       color: var(--main-text-color);
       background-color: var( --card-background-color);
-      border: 2px solid $updated-box-background;
+      border: 1px solid var(--table-headers-background-color);
       border-radius: 5px;
       padding: .3rem;
       min-width: 8rem;
@@ -323,7 +374,7 @@ body{
 
 .last-7-days-container-wrapper{
   padding: 0 10px;
-
+  width: 100%;
 }
 .last-7-days-container{
   background-color: var(--card-background-color); 
@@ -337,14 +388,6 @@ body{
 }
 
 //charts
-
-.card-container-wrapper{
-  background-color: var(--card-background-color); 
-  padding: 0 20px;  
-  margin: 0 10px 20px 10px;
-  border-radius: 10px;
-  box-shadow: 3px 3px 11px #465a7a1c;
-}
 
 .card-container{
   position: relative;
@@ -490,7 +533,7 @@ body{
   .last-updated-container{
     margin: 0.3rem 0;
     // background-color: red;
-    background-color: $updated-box-background;
+    background-color: var(--table-headers-background-color);
     font-size: 0.7rem;
     display: flex;
     align-items: flex-end;
@@ -512,7 +555,7 @@ body{
     height: 234px;
     overflow-y: auto;
     .table-headers{
-      background-color: $updated-box-background;
+      background-color: var(--table-headers-background-color);
       display: flex;
       justify-content: space-between;
       // padding: 0.2rem;
@@ -535,12 +578,11 @@ body{
   
       padding: 0.2rem 0.5rem;
       font-weight: 700;
-      border-bottom: 1px solid $updated-box-background;
-
+      border-bottom: 2px solid var(--table-headers-background-color);
       
-      data-item{
-        align-self: center;
-      }
+      // data-item{
+      //   align-self: center;
+      // }
 
 
       .color-square{
@@ -755,10 +797,18 @@ body{
   transform: rotate(180deg);
 }
 
-
 .info-icon{
-  
-  width: 1.25rem;
+  height: 18px;
+  width: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: serif;
+  color: var(--card-background-color);
+  background-color: var(--main-text-color);
+  border-radius: 50%;
+  font-size: 0.6rem;
+  font-weight: 600;
 
   &:hover ~ .info-tooltip{
     font-weight: 400;
@@ -767,42 +817,16 @@ body{
   }
 }
 
-.info-icon{
-  height: 18px;
-  width: 18px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  color: var(--card-background-color);
-  background-color: var(--main-text-color);
-  border-radius: 50%;
-  // padding: 10px;
-  font-size: 0.6rem;
-  font-weight: 600;
-}
-
-// .info-icon-bright{
-//   width: 1rem;
-//   margin-left: 5px;
-// }
 .info-icon-bright{
-  // width: 1rem; --check again
   margin-left: 5px;
-
-  height: 18px;
-  width: 18px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  color: var(--card-background-color);
-  background-color: var(--main-text-color);
+  color: var(--main-text-color);
+  background-color: var(--card-background-color);
+  background-color: transparent;
+  border: 2px solid var(--main-text-color);
   border-radius: 50%;
-  // padding: 10px;
-  font-size: 0.6rem;
+ 
+  font-size: 0.7rem;
   font-weight: 600;
-
 }
 
 

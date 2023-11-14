@@ -12,7 +12,6 @@
   <script src="https://code.highcharts.com/highcharts.js"></script>
 </head>
 <body>
-  
     <div class="side-menu-overlay hide">
       <div class="side-menu">
         <div class="side-menu-header">
@@ -51,19 +50,6 @@
 
     <nav class="navbar">
       <ul class="nav-links">
-        <!-- <li class="nav-link"><a href="section-0">מבט על</a></li>
-        <li class="nav-link"><a>מדדים מרכזיים</a></li>
-        <li class="nav-link"><a>תחלואה ואשפוזי ילדים</a></li>
-        <li class="nav-link"><a>השפעת התחסנות על התחלואה</a></li>
-        <li class="nav-link"><a>נפטרים</a></li>
-        <li class="nav-link"><a>בדיקות</a></li>
-        <li class="nav-link"><a>תחקורים נוספים</a></li>
-        <li class="nav-link"><a>תחלואה חוזרת ומחלימים</a></li>
-        <li class="nav-link"><a>התחסנות האוכלוסיה</a></li>
-        <li class="nav-link"><a>מדדי תחלואה כללית</a></li>
-        <li class="nav-link"><a>תחלואה מחו"ל</a></li>
-        <li class="nav-link"><a>רמזור ישובים</a></li> -->
-
 
         <li class="nav-link"><a href="#section-01">מבט על</a></li>
         <li class="nav-link"><a href="#section-02">מדדים מרכזיים</a></li>
@@ -473,9 +459,61 @@
           </div>
 
           <div class="card-content">
+                      
+            <div class="collapsible-wrapper">
+                <button class="filter-btn collapsible-btn">
+                  <div class="btn-text">חודש אחרון</div>
+                <img src="./images/down-caret.svg" class="down-caret-icon">
+              </button>
+              <div class="filters-container hide collapsible">
+              
+                <div class="filter-group">               
+                  <div class="filter-group-heading">זמן</div>
+                  <ul> 
+                    <li>
+                      <input name="dummy" type="radio" id="until-now-1"><label for="until-now-1">עד עכשיו</label>
+                    </li>
+                    <li>
+                      <input name="dummy" type="radio" id="year-1"><label for="year-1">שנה</label>
+                    </li>
+                    <li>
+                      <input name="dummy" type="radio" id="six-months-1"><label for="six-months-1">6 חודשים</label>
+                    </li>
+                    <li>
+                      <input name="dummy" type="radio" id="three-months-1"><label for="three-months-1">3 חודשים</label>
+                    </li>
+                    <li>
+                      <input name="dummy" type="radio" id="last-month-1"><label for="last-month-1">חודש אחרון</label>
+                    </li>
+                  </ul>
+                </div>
+                  <div class="approve-or-cancel-buttons-container">
+                    <button class="approve-btn">אישור</button>
+                    <button class="cancal-btn">ביטול</button>
+                  </div>
+                  
+                </div>
+              
+
+              <div class="legend-container margin-bottom-15">
+                <div class="legend-item">
+                  <div class="circle light-blue"></div>
+                  <div class="legend-text">קשה</div>
+                </div>
+                <div class="legend-item">
+                  <div class="circle olive"></div>
+                  <div class="legend-text">בינוני</div>
+                </div>
+                <div class="legend-item">
+                  <div class="circle dark-green"></div>
+                  <div class="legend-text">קל</div>
+                </div>
+              </div>
+
               <div class="chart-container">
                 <canvas class="dummy-chart-01"></canvas>
               </div>
+            </div>
           </div>
 
         </div>
@@ -2284,9 +2322,183 @@
       <!-- in others also links -->
     </div>
     <div class="section-content">
-
-      <!--TABLE CONTAINER -->
+    <!-- GRAPH 1 CONTAINER -->
       <div class="card-container-wrapper">
+        <div class="card-container">
+          <div class="three-points-menu-wrapper collapsible-wrapper">
+            <img src="./images/three-points-icon.svg" class="three-points-icon collapsible-btn">
+            <div class="share-and-download-container collapsible hide">
+              <button>
+                <img src="./images/share-icon.svg">
+                <span>שיתוף</span>  
+              </button>
+              <button>
+                <img src="./images/download-icon.svg">
+                <span>הורדה</span>  
+              </button>
+            </div>
+          </div>
+          
+          <div class="card-top-heading">
+            <h3 class="card-heading">מספר התחסנויות - יומי</h3>
+            <div class="info-container">
+              <div class="info-icon">i</div>
+              <div class="info-tooltip">הסבר לגבי מה שכתוב כאן הסבר לגבי מה שכתוב כאן הסבר לגבי מה שכתוב כאן הסבר לגבי מה שכתוב כאן</div>
+            </div>
+          </div>
+
+          <div class="card-content">
+            <div class="collapsible-wrapper">
+              <button class="filter-btn collapsible-btn">
+                <div class="btn-text">מאומתים, חודש אחרון</div>
+                <img src="./images/down-caret.svg" class="down-caret-icon">
+              </button>
+              <div class="filters-container hide collapsible">
+              
+                <div class="filter-group">
+                  <div class="filter-group-heading">מצב מאושפזים</div>
+                  <ul> 
+                    <li><input type="checkbox" id="severe-condition"><label for="severe-condition">קשה</label></li>
+                    <li><input type="checkbox" id="moderate-condition"><label for="moderate-condition">בינוני</label></li>
+                    <li><input type="checkbox" id="mild-condition"><label for="mild-condition">קל</label></li>
+                  </ul>
+
+                  <hr class="filter-separator">
+                  
+                  <div class="filter-group-heading">זמן</div>
+                  <ul> 
+                    <li>
+                      <input name="a" type="radio" id="until-now-1"><label for="until-now-1">עד עכשיו</label>
+                    </li>
+                    <li>
+                      <input name="a" type="radio" id="year-1"><label for="year-1">שנה</label>
+                    </li>
+                    <li>
+                      <input name="a" type="radio" id="six-months-1"><label for="six-months-1">6 חודשים</label>
+                    </li>
+                    <li>
+                      <input name="a" type="radio" id="three-months-1"><label for="three-months-1">3 חודשים</label>
+                    </li>
+                    <li>
+                      <input name="a" type="radio" id="last-month-1"><label for="last-month-1">חודש אחרון</label>
+                    </li>
+                  </ul>
+                </div>
+                  <div class="approve-or-cancel-buttons-container">
+                    <button class="approve-btn">אישור</button>
+                    <button class="cancal-btn">ביטול</button>
+                  </div>
+                  
+              </div>
+            </div>
+            <div class="legend-container margin-bottom-15">
+              <div class="legend-item">
+                <div class="circle light-blue"></div>
+                <div class="legend-text">גברים</div>
+              </div>
+              <div class="legend-item">
+                <div class="circle olive"></div>
+                <div class="legend-text">נשים</div>
+              </div>
+            </div>
+
+
+            <div class="chart-container">
+              <canvas class="dummy-chart-01"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- GRAPH 1 CONTAINER -->
+      <div class="card-container-wrapper">
+        <div class="card-container">
+          <div class="three-points-menu-wrapper collapsible-wrapper">
+            <img src="./images/three-points-icon.svg" class="three-points-icon collapsible-btn">
+            <div class="share-and-download-container collapsible hide">
+              <button>
+                <img src="./images/share-icon.svg">
+                <span>שיתוף</span>  
+              </button>
+              <button>
+                <img src="./images/download-icon.svg">
+                <span>הורדה</span>  
+              </button>
+            </div>
+          </div>
+          
+          <div class="card-top-heading">
+            <h3 class="card-heading">מספר התחסנויות - יומי</h3>
+            <div class="info-container">
+              <div class="info-icon">i</div>
+              <div class="info-tooltip">הסבר לגבי מה שכתוב כאן הסבר לגבי מה שכתוב כאן הסבר לגבי מה שכתוב כאן הסבר לגבי מה שכתוב כאן</div>
+            </div>
+          </div>
+
+          <div class="card-content">
+            <div class="collapsible-wrapper">
+              <button class="filter-btn collapsible-btn">
+                <div class="btn-text">מאומתים, חודש אחרון</div>
+                <img src="./images/down-caret.svg" class="down-caret-icon">
+              </button>
+              <div class="filters-container hide collapsible">
+              
+                <div class="filter-group">
+                  <div class="filter-group-heading">מצב מאושפזים</div>
+                  <ul> 
+                    <li><input type="checkbox" id="severe-condition"><label for="severe-condition">קשה</label></li>
+                    <li><input type="checkbox" id="moderate-condition"><label for="moderate-condition">בינוני</label></li>
+                    <li><input type="checkbox" id="mild-condition"><label for="mild-condition">קל</label></li>
+                  </ul>
+
+                  <hr class="filter-separator">
+                  
+                  <div class="filter-group-heading">זמן</div>
+                  <ul> 
+                    <li>
+                      <input name="a" type="radio" id="until-now-1"><label for="until-now-1">עד עכשיו</label>
+                    </li>
+                    <li>
+                      <input name="a" type="radio" id="year-1"><label for="year-1">שנה</label>
+                    </li>
+                    <li>
+                      <input name="a" type="radio" id="six-months-1"><label for="six-months-1">6 חודשים</label>
+                    </li>
+                    <li>
+                      <input name="a" type="radio" id="three-months-1"><label for="three-months-1">3 חודשים</label>
+                    </li>
+                    <li>
+                      <input name="a" type="radio" id="last-month-1"><label for="last-month-1">חודש אחרון</label>
+                    </li>
+                  </ul>
+                </div>
+                  <div class="approve-or-cancel-buttons-container">
+                    <button class="approve-btn">אישור</button>
+                    <button class="cancal-btn">ביטול</button>
+                  </div>
+                  
+              </div>
+            </div>
+            <div class="legend-container margin-bottom-15">
+              <div class="legend-item">
+                <div class="circle light-blue"></div>
+                <div class="legend-text">גברים</div>
+              </div>
+              <div class="legend-item">
+                <div class="circle olive"></div>
+                <div class="legend-text">נשים</div>
+              </div>
+            </div>
+
+
+            <div class="chart-container">
+              <canvas class="dummy-chart-01"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--TABLE CONTAINER -->
+      <div class="card-container-wrapper table-wrapper">
         <div class="card-container">
           <div class="three-points-menu-wrapper collapsible-wrapper">
             <img src="./images/three-points-icon.svg" class="three-points-icon collapsible-btn">
@@ -2333,7 +2545,7 @@
             </div>
 
             <div class="last-updated-container">
-              <img src="./images/info-icon.svg" class="info-icon-bright">
+              <div class="info-icon info-icon-bright">i</div>
               <span>הנתונים מעודכנים לתאריך 06.06.23</span>
             </div>
 
@@ -2357,7 +2569,7 @@
     <div class="section-content">
 
       <!--TABLE CONTAINER -->
-      <div class="card-container-wrapper">
+      <div class="card-container-wrapper table-wrapper">
         <div class="card-container">
           <div class="three-points-menu-wrapper collapsible-wrapper">
             <img src="./images/three-points-icon.svg" class="three-points-icon collapsible-btn">
@@ -2405,7 +2617,7 @@
             </div>
 
             <div class="last-updated-container">
-              <img src="./images/info-icon.svg" class="info-icon-bright">
+              <div class="info-icon info-icon-bright">i</div>
               <span>הנתונים מעודכנים לתאריך 06.06.23</span>
             </div>
             
@@ -2428,7 +2640,7 @@
     </div>
     <div class="section-content">
       <!--TABLE CONTAINER -->
-      <div class="card-container-wrapper">
+      <div class="card-container-wrapper table-wrapper">
         <div class="card-container">
           <div class="three-points-menu-wrapper collapsible-wrapper">
             <img src="./images/three-points-icon.svg" class="three-points-icon collapsible-btn">
@@ -2476,7 +2688,7 @@
             </div>
 
             <div class="last-updated-container">
-              <img src="./images/info-icon.svg" class="info-icon-bright">
+              <div class="info-icon info-icon-bright">i</div>
               
               
               <span>הנתונים מעודכנים לתאריך 06.06.23</span>
