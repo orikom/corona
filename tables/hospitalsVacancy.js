@@ -38,10 +38,52 @@ const hospitalsVacancyData = [
   
 ];
 
+class HospitalVacancyTable extends Table{
+
+  renderData(data) {
+    const tableDataContainer = this.currTableWrapperElement.querySelector('.table-data-container')
+    //remove all old data
+    tableDataContainer.innerHTML ='';
+
+    data.forEach((record) => {
+      const tableData = document.createElement('div');
+      tableData.classList.add('table-data');
+
+      let htmlRecordMarkup = "";
+      for(let key in record){
+        if(key !== 'id'){
+
+           //if key has precentage on it - need to add precentages bars
+          if(key.includes("Percentage")){
+            htmlRecordMarkup += `<div class="data-item data-item-with-precentage-bar">
+                                    <div class="precentage-container">
+                                      <div class="precentage-bar" style="width: ${record[key]}%;"></div>
+                                    </div>
+                                    
+                                    ${record[key]}%
+                                  </div>`
+          } else{
+            htmlRecordMarkup += `<div class="data-item">${record[key]}</div>`
+          }
+        }
+      }
+
+      tableData.innerHTML = htmlRecordMarkup;
+      tableDataContainer.appendChild(tableData);
+    })
+  }
+
+}
+
+
+
+
+
+
 
 const hospitalsVacancyTableWrapperElement = document.querySelector('#hospitals-vacancy-table-wrapper');
 
-new Table(
+new HospitalVacancyTable(
     hospitalsVacancyTableWrapperElement, 
     hospitalsVacancyData, 
     'hospitalName', 

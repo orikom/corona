@@ -580,9 +580,22 @@ body{
       font-weight: 700;
       border-bottom: 2px solid var(--table-headers-background-color);
       
-      // data-item{
-      //   align-self: center;
-      // }
+      .data-item-with-precentage-bar{
+        display: flex;
+        align-items: center;
+        .precentage-container{
+          width: 40px;
+          height: 10px;
+          background-color: var(--precentage-bar-container-color);
+
+          .precentage-bar{
+            height: 100%;
+            
+            background-color: var(--precentage-bar-blue-color);
+          }
+        }
+      }
+
 
 
       .color-square{
@@ -619,9 +632,10 @@ body{
       min-width: 3rem;
     }
 
-    div:not(:first-child):after{
-      content: '%';
-    }
+    // div:not(:first-child):after{
+    //   content: '%';
+    // }
+    
   }
 }
 

@@ -194,7 +194,6 @@ export class Table {
 
       tableData.innerHTML = htmlRecordMarkup;
       tableDataContainer.appendChild(tableData);
-
     })
   }
 
