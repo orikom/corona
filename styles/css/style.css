@@ -8,6 +8,8 @@
   --precentage-bar-green-color:#8eb0c0;
   --precentage-bar-blue-color: #69c3f5;
   --precentage-bar-red-color: #de7483;
+  --scroll-thumb-color: #a2a3a3;
+  --scroll-thumb-hover-color: #adadad;
 }
 
 .dark-mode {
@@ -28,9 +30,19 @@ button {
 
 html {
   font-size: 16px;
-  direction: rtl;
   font-family: "Open Sans", sans-serif;
+  direction: rtl;
   scroll-padding-top: 180px;
+}
+@media (max-width: 953px) {
+  html {
+    scroll-padding-top: 220px;
+  }
+}
+@media (max-width: 402px) {
+  html {
+    scroll-padding-top: 250px;
+  }
 }
 
 body, h1, h2, h3, h4, ul {
@@ -40,7 +52,6 @@ body, h1, h2, h3, h4, ul {
 
 body {
   background-color: var(--website-background-color);
-  padding: 0 10px;
 }
 
 .fixed-position-section {
@@ -48,14 +59,16 @@ body {
   top: 0;
   right: 0;
   z-index: 1000;
+  background-color: #fff;
+  width: 100%;
 }
 
 .header {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  width: 90%;
   padding: 1rem;
-  width: 100vw;
   background-color: #fff;
 }
 .header .hamburger-icon {
@@ -98,6 +111,7 @@ body {
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.7);
   font-weight: 700;
+  transition: all 0.2s ease-out;
 }
 .side-menu-overlay .side-menu {
   width: 275px;
@@ -109,6 +123,7 @@ body {
   padding: 16px 20px;
   font-size: 0.875rem;
   color: #374f60;
+  box-shadow: 12px 34px 25px #111;
 }
 .side-menu-overlay .side-menu-header {
   padding-top: 1rem;
@@ -139,6 +154,16 @@ body {
 }
 .side-menu-overlay .menu-link:hover {
   background-color: #E0E0E0;
+}
+
+.hide-side-menu {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.show-side-menu {
+  visibility: visible;
+  opacity: 1;
 }
 
 .navbar {
@@ -479,91 +504,97 @@ body {
   padding: 5px 5px;
   border-radius: 5px;
 }
-.card-container .chart-container {
+.chart-container {
   height: 234px;
 }
-.card-container .chart-container .chart {
+.chart-container .chart {
   height: 100%;
 }
-.card-container .table-container {
+
+.table-headers {
+  background-color: var(--table-headers-background-color);
+  display: grid;
+  align-items: center;
+  overflow-x: auto;
+}
+.table-headers .table-header-category {
+  display: flex;
+  padding: 1rem 0;
+}
+.table-headers .table-header-category .down-caret-icon {
+  transition: none;
+}
+.table-headers .table-header-category:hover {
+  cursor: pointer;
+}
+
+#table-1-headers {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+#table-2-headers {
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+#table-3-headers {
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.table-container {
   height: 234px;
   overflow-y: auto;
 }
-.card-container .table-container .table-headers {
-  background-color: var(--table-headers-background-color);
-  display: flex;
-  justify-content: space-between;
-}
-.card-container .table-container .table-headers .table-header-category {
-  display: flex;
-  gap: 0.5rem;
-  padding: 1rem 0;
-}
-.card-container .table-container .table-headers .table-header-category .down-caret-icon {
-  transition: none;
-}
-.card-container .table-container .table-headers .table-header-category:hover {
-  cursor: pointer;
-}
-.card-container .table-container #table-1-headers {
-  grid-template-columns: 1fr 1fr 1fr;
-}
-.card-container .table-container #table-2-headers {
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-}
-.card-container .table-container #table-3-headers {
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-}
-.card-container .table-container .table-data {
+.table-container .table-data {
   display: grid;
   row-gap: 1rem;
   padding: 1rem 0;
   border-bottom: 2px solid var(--table-headers-background-color);
 }
-.card-container .table-container #table-1-data-container > .table-data {
+.table-container #table-1-data-container > .table-data {
   grid-template-columns: 1fr 1fr 1fr;
 }
-.card-container .table-container #table-1-data-container > .table-data .data-item:first-child {
+.table-container #table-1-data-container > .table-data .data-item:first-child {
   font-weight: 700;
 }
-.card-container .table-container #table-2-data-container > .table-data {
+.table-container #table-2-data-container > .table-data {
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 }
-.card-container .table-container #table-3-data-container > .table-data {
+.table-container #table-3-data-container > .table-data {
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 }
-.card-container .table-container .data-item-with-precentage-bar {
+.table-container .data-item-with-precentage-bar {
   display: flex;
   align-items: center;
 }
-.card-container .table-container .data-item-with-precentage-bar .precentage-container {
+.table-container .data-item-with-precentage-bar .precentage-container {
   width: 40px;
   height: 10px;
   background-color: var(--precentage-bar-container-color);
 }
-.card-container .table-container .data-item-with-precentage-bar .precentage-container .precentage-bar {
+.table-container .data-item-with-precentage-bar .precentage-container .precentage-bar {
   height: 100%;
   background-color: var(--precentage-bar-blue-color);
 }
-.card-container .table-container .color-square {
+.table-container .color-square {
   width: 20px;
   height: 20px;
   border-radius: 5px;
 }
-.card-container .table-container .yellow-square {
+.table-container .yellow-square {
   background-color: rgb(252, 224, 82);
 }
-.card-container .table-container .orange-square {
+.table-container .orange-square {
   background-color: rgb(255, 125, 103);
 }
-.card-container .table-container .red-square {
+.table-container .red-square {
   background-color: rgb(226, 29, 72);
 }
 
 #traffic-light-table-wrapper .red-traffic-light, #traffic-light-table-wrapper .orange-traffic-light, #traffic-light-table-wrapper .yellow-traffic-light, #traffic-light-table-wrapper .green-traffic-light {
   font-weight: 700;
   padding: 0.3rem;
-  min-width: 2rem;
+  width: 2rem;
+  border-radius: 5px;
   text-align: center;
   text-decoration: underline;
 }
@@ -709,4 +740,28 @@ body {
   border-radius: 50%;
   font-size: 0.7rem;
   font-weight: 600;
+}
+
+.website-scrollable-wrapper {
+  height: 100vh;
+  overflow-y: scroll;
+  padding: 0 10px;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scroll-thumb-color);
+  border-radius: 100vw;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scroll-thumb-hover-color);
 }

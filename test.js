@@ -1,36 +1,38 @@
-const allnavLinks = document.querySelectorAll('.nav-link');
-const navLinks = document.querySelector('.nav-links');
-const allSectios = document.querySelectorAll('section');
+// document.querySelector('button').addEventListener('click', () =>{
+//   document.querySelector('.modal').classList.toggle('hide');
+// })
 
-navLinks.addEventListener('click', (event) => {
-  const clickedNavLink = event.target.closest('.nav-link');
+// const allnavLinks = document.querySelectorAll('.nav-link');
+// const navLinks = document.querySelector('.nav-links');
+// const allSectios = document.querySelectorAll('section');
 
-  if(clickedNavLink){
-    allnavLinks.forEach( navLink => {
-      if(clickedNavLink === navLink)
-        allnavLinks[index].classList.add('active');
+// navLinks.addEventListener('click', (event) => {
+//   const clickedNavLink = event.target.closest('.nav-link');
+
+//   if(clickedNavLink){
+//     allnavLinks.forEach( navLink => {
+//       if(clickedNavLink === navLink)
+//         allnavLinks[index].classList.add('active');
       
-      else allnavLinks[index].classList.remove('active');
-    })
-  }
-})
+//       else allnavLinks[index].classList.remove('active');
+//     })
+//   }
+// })
 
-function handleScrollEvent(){
-  allSectios.forEach((section, index) =>{
+// function handleScrollEvent(){
+//   allSectios.forEach((section, index) =>{
 
-    const sectionYStart = section.offsetTop;
-    const sectionHeight = section.clientHeight
+//     const sectionYStart = section.offsetTop;
+//     const sectionHeight = section.clientHeight
     
-    if(window.scrollY >= sectionYStart && window.scrollY < sectionYStart + sectionHeight){
-      allnavLinks[index].classList.add('active');
-    } else {
-      allnavLinks[index].classList.remove('active');
-    }
+//     if(window.scrollY >= sectionYStart && window.scrollY < sectionYStart + sectionHeight){
+//       allnavLinks[index].classList.add('active');
+//     } else {
+//       allnavLinks[index].classList.remove('active');
+//     }
     
-  })
+//   })
 
-}
+// }
 
-window.addEventListener('scroll', handleScrollEvent)
-
-
+// window.addEventListener('scroll', handleScrollEvent)

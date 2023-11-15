@@ -59,12 +59,16 @@ sideMenuOverlay.addEventListener('click', (event) =>{
 })
 
 function openSideMenu(){
-  sideMenuOverlay.classList.remove('hide');
+  sideMenuOverlay.classList.remove('hide-side-menu');
+  sideMenuOverlay.classList.add('show-side-menu');
   document.body.style.overflow = 'hidden';
 }
 
 function closeSideMenu(){
-  sideMenuOverlay.classList.add('hide');
+  // sideMenuOverlay.classList.add('hide');
+  
+  sideMenuOverlay.classList.remove('show-side-menu');
+  sideMenuOverlay.classList.add('hide-side-menu');
   document.body.style.overflow = '';
 }
 
