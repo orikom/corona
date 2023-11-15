@@ -32,17 +32,6 @@ html {
   font-size: 16px;
   font-family: "Open Sans", sans-serif;
   direction: rtl;
-  scroll-padding-top: 180px;
-}
-@media (max-width: 953px) {
-  html {
-    scroll-padding-top: 220px;
-  }
-}
-@media (max-width: 402px) {
-  html {
-    scroll-padding-top: 250px;
-  }
 }
 
 body, h1, h2, h3, h4, ul {
@@ -258,6 +247,11 @@ body {
 
 #section-01 {
   margin-top: 170px;
+}
+@media screen and (max-width: 720px) {
+  #section-01 {
+    margin-top: 240px;
+  }
 }
 
 .info-cards-container {
@@ -746,6 +740,17 @@ body {
   height: 100vh;
   overflow-y: scroll;
   padding: 0 10px;
+  scroll-padding-top: 220px;
+}
+@media (max-width: 953px) {
+  .website-scrollable-wrapper {
+    scroll-padding-top: 220px;
+  }
+}
+@media (max-width: 402px) {
+  .website-scrollable-wrapper {
+    scroll-padding-top: 250px;
+  }
 }
 
 ::-webkit-scrollbar {
